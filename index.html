@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn HTML Forms - Ôn Tập Toàn Diện</title>
+    <meta name="description"
+        content="Hướng dẫn chi tiết về cách sử dụng form trong HTML từ cơ bản đến trung bình với các ví dụ thực tế">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">HTML Forms Tutorial</h1>
+            <p class="header-subtitle">Hướng dẫn toàn diện về cách sử dụng form trong HTML</p>
+        </div>
+    </header>
+
+    <!-- Layout Container -->
+    <div class="layout-container">
+        <!-- Navigation -->
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#intro">Giới thiệu</a></li>
+                <li><a href="#basic">Form cơ bản</a></li>
+                <li><a href="#input-types">Input Types</a></li>
+                <li><a href="#radio-checkbox">Radio & Checkbox</a></li>
+                <li><a href="#select-textarea">Select & Textarea</a></li>
+                <li><a href="#attributes">Attributes</a></li>
+                <li><a href="#complete">Ví dụ tổng hợp</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+
+                <!-- Section 1: Giới thiệu -->
+                <section id="intro" class="section">
+                    <h2 class="section-title">1. Giới thiệu về HTML Forms</h2>
+                    <div class="content">
+                        <p class="description">
+                            <strong>Form</strong> trong HTML là một phần tử được sử dụng để thu thập dữ liệu từ người
+                            dùng.
+                            Form bao gồm các phần tử như input, button, checkbox, radio button, select, textarea, v.v.
+                        </p>
+                        <p class="description">
+                            Cú pháp cơ bản của một form:
+                        </p>
+
+                        <div class="example-box">
+                            <h3 class="example-title">Code Example:</h3>
+                            <pre class="code-block"><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;!-- Các phần tử form ở đây --&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Các thuộc tính quan trọng của form:</h4>
+                            <ul>
+                                <li><code>action</code>: URL nơi dữ liệu form sẽ được gửi đến</li>
+                                <li><code>method</code>: Phương thức HTTP (GET hoặc POST)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Form cơ bản -->
+                <section id="basic" class="section">
+                    <h2 class="section-title">2. Form Cơ Bản</h2>
+                    <div class="content">
+                        <p class="description">
+                            Hãy bắt đầu với một form đơn giản bao gồm input text, password và button.
+                        </p>
+
+                        <div class="example-box">
+                            <h3 class="example-title">Code Example:</h3>
+                            <pre class="code-block"><code>&lt;form&gt;
+    &lt;label for="username"&gt;Tên đăng nhập:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username"&gt;
+    
+    &lt;label for="password"&gt;Mật khẩu:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password"&gt;
+    
+    &lt;button type="submit"&gt;Đăng nhập&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+
+                        <div class="demo-box">
+                            <h3 class="demo-title">Demo:</h3>
+                            <form class="demo-form">
+                                <div class="form-group">
+                                    <label for="demo-username">Tên đăng nhập:</label>
+                                    <input type="text" id="demo-username" name="username"
+                                        placeholder="Nhập tên đăng nhập">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="demo-password">Mật khẩu:</label>
+                                    <input type="password" id="demo-password" name="password"
+                                        placeholder="Nhập mật khẩu">
+                                </div>
+
+                                <button type="submit" class="btn-primary">Đăng nhập</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Input Types -->
+                <section id="input-types" class="section">
+                    <h2 class="section-title">3. Các Loại Input (Input Types)</h2>
+                    <div class="content">
+                        <p class="description">
+                            HTML5 cung cấp nhiều loại input khác nhau để phù hợp với từng loại dữ liệu.
+                        </p>
+
+                        <div class="example-box">
+                            <h3 class="example-title">Code Example:</h3>
+                            <pre class="code-block"><code>&lt;form&gt;
+    &lt;!-- Email --&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    
+    &lt;!-- Number --&gt;
+    &lt;label for="age"&gt;Tuổi:&lt;/label&gt;
+    &lt;input type="number" id="age" name="age" min="1" max="120"&gt;
+    
+    &lt;!-- Date --&gt;
+    &lt;label for="birthday"&gt;Ngày sinh:&lt;/label&gt;
+    &lt;input type="date" id="birthday" name="birthday"&gt;
+    
+    &lt;!-- Color --&gt;
+    &lt;label for="color"&gt;Màu yêu thích:&lt;/label&gt;
+    &lt;input type="color" id="color" name="color"&gt;
+    
+    &lt;!-- Range --&gt;
+    &lt;label for="volume"&gt;Âm lượng:&lt;/label&gt;
+    &lt;input type="range" id="volume" name="volume" min="0" max="100"&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+
+                        <div class="demo-box">
+                            <h3 class="demo-title">Demo:</h3>
+                            <form class="demo-form">
+                                <div class="form-group">
+                                    <label for="demo-email">Email:</label>
+                                    <input type="email" id="demo-email" name="email" placeholder="example@email.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="demo-age">Tuổi:</label>
+                                    <input type="number" id="demo-age" name="age" min="1" max="120" placeholder="18">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="demo-birthday">Ngày sinh:</label>
+                                    <input type="date" id="demo-birthday" name="birthday">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="demo-color">Màu yêu thích:</label>
+                                    <input type="color" id="demo-color" name="color" value="#6366f1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="demo-volume">Âm lượng: <span id="volume-value">50</span></label>
+                                    <input type="range" id="demo-volume" name="volume" min="0" max="100" value="50"
+                                        oninput="document.getElementById('volume-value').textContent = this.value">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 4: Radio & Checkbox -->
+                <section id="radio-checkbox" class="section">
+                    <h2 class="section-title">4. Radio Button & Checkbox</h2>
+                    <div class="content">
+                        <p class="description">
+                            <strong>Radio button</strong> cho phép chọn một tùy chọn duy nhất, trong khi
+                            <strong>checkbox</strong> cho phép chọn nhiều tùy chọn.
+                        </p>
+
+                        <div class="example-box">
+                            <h3 class="example-title">Code Example:</h3>
+                            <pre class="code-block"><code>&lt;form&gt;
+    &lt;!-- Radio Buttons --&gt;
+    &lt;p&gt;Giới tính:&lt;/p&gt;
+    &lt;input type="radio" id="male" name="gender" value="male"&gt;
+    &lt;label for="male"&gt;Nam&lt;/label&gt;
+    
+    &lt;input type="radio" id="female" name="gender" value="female"&gt;
+    &lt;label for="female"&gt;Nữ&lt;/label&gt;
+    
+    &lt;input type="radio" id="other" name="gender" value="other"&gt;
+    &lt;label for="other"&gt;Khác&lt;/label&gt;
+    
+    &lt;!-- Checkboxes --&gt;
+    &lt;p&gt;Sở thích:&lt;/p&gt;
+    &lt;input type="checkbox" id="music" name="hobby" value="music"&gt;
+    &lt;label for="music"&gt;Âm nhạc&lt;/label&gt;
+    
+    &lt;input type="checkbox" id="sports" name="hobby" value="sports"&gt;
+    &lt;label for="sports"&gt;Thể thao&lt;/label&gt;
+    
+    &lt;input type="checkbox" id="reading" name="hobby" value="reading"&gt;
+    &lt;label for="reading"&gt;Đọc sách&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+
+                        <div class="demo-box">
+                            <h3 class="demo-title">Demo:</h3>
+                            <form class="demo-form">
+                                <div class="form-group">
+                                    <p class="form-label">Giới tính:</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="demo-gender" value="male">
+                                            <span>Nam</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="demo-gender" value="female">
+                                            <span>Nữ</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="demo-gender" value="other">
+                                            <span>Khác</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <p class="form-label">Sở thích:</p>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="demo-hobby" value="music">
+                                            <span>Âm nhạc</span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="demo-hobby" value="sports">
+                                            <span>Thể thao</span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="demo-hobby" value="reading">
+                                            <span>Đọc sách</span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="demo-hobby" value="gaming">
+                                            <span>Chơi game</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: Select & Textarea -->
+                <section id="select-textarea" class="section">
+                    <h2 class="section-title">5. Select (Dropdown) & Textarea</h2>
+                    <div class="content">
+                        <p class="description">
+                            <strong>Select</strong> tạo menu dropdown, <strong>textarea</strong> cho phép nhập văn bản
+                            nhiều
+                            dòng.
+                        </p>
+
+                        <div class="example-box">
+                            <h3 class="example-title">Code Example:</h3>
+                            <pre class="code-block"><code>&lt;form&gt;
+    &lt;!-- Select/Dropdown --&gt;
+    &lt;label for="city"&gt;Thành phố:&lt;/label&gt;
+    &lt;select id="city" name="city"&gt;
+        &lt;option value=""&gt;-- Chọn thành phố --&lt;/option&gt;
+        &lt;option value="hanoi"&gt;Hà Nội&lt;/option&gt;
+        &lt;option value="hcm"&gt;TP. Hồ Chí Minh&lt;/option&gt;
+        &lt;option value="danang"&gt;Đà Nẵng&lt;/option&gt;
+        &lt;option value="cantho"&gt;Cần Thơ&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;!-- Textarea --&gt;
+    &lt;label for="message"&gt;Tin nhắn:&lt;/label&gt;
+    &lt;textarea id="message" name="message" rows="4" cols="50"&gt;&lt;/textarea&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+
+                        <div class="demo-box">
+                            <h3 class="demo-title">Demo:</h3>
+                            <form class="demo-form">
+                                <div class="form-group">
+                                    <label for="demo-city">Thành phố:</label>
+                                    <select id="demo-city" name="city">
+                                        <option value="">-- Chọn thành phố --</option>
+                                        <option value="hanoi">Hà Nội</option>
+                                        <option value="hcm">TP. Hồ Chí Minh</option>
+                                        <option value="danang">Đà Nẵng</option>
+                                        <option value="cantho">Cần Thơ</option>
+                                        <option value="haiphong">Hải Phòng</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="demo-message">Tin nhắn:</label>
+                                    <textarea id="demo-message" name="message" rows="4"
+                                        placeholder="Nhập tin nhắn của bạn..."></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 6: Form Attributes -->
+                <section id="attributes" class="section">
+                    <h2 class="section-title">6. Các Thuộc Tính Quan Trọng (Attributes)</h2>
+                    <div class="content">
+                        <p class="description">
+                            Các thuộc tính giúp kiểm soát và validate dữ liệu form.
+                        </p>
+
+                        <div class="example-box">
+                            <h3 class="example-title">Code Example:</h3>
+                            <pre class="code-block"><code>&lt;form&gt;
+    &lt;!-- Required: Bắt buộc phải nhập --&gt;
+    &lt;label for="fullname"&gt;Họ tên (bắt buộc):&lt;/label&gt;
+    &lt;input type="text" id="fullname" name="fullname" required&gt;
+    
+    &lt;!-- Placeholder: Văn bản gợi ý --&gt;
+    &lt;label for="phone"&gt;Số điện thoại:&lt;/label&gt;
+    &lt;input type="tel" id="phone" name="phone" placeholder="0123456789"&gt;
+    
+    &lt;!-- Disabled: Vô hiệu hóa --&gt;
+    &lt;label for="country"&gt;Quốc gia:&lt;/label&gt;
+    &lt;input type="text" id="country" name="country" value="Việt Nam" disabled&gt;
+    
+    &lt;!-- Readonly: Chỉ đọc --&gt;
+    &lt;label for="userid"&gt;User ID:&lt;/label&gt;
+    &lt;input type="text" id="userid" name="userid" value="USER12345" readonly&gt;
+    
+    &lt;!-- Maxlength: Giới hạn độ dài --&gt;
+    &lt;label for="code"&gt;Mã code (tối đa 6 ký tự):&lt;/label&gt;
+    &lt;input type="text" id="code" name="code" maxlength="6"&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+
+                        <div class="demo-box">
+                            <h3 class="demo-title">Demo:</h3>
+                            <form class="demo-form">
+                                <div class="form-group">
+                                    <label for="demo-fullname">Họ tên (bắt buộc): <span
+                                            class="required">*</span></label>
+                                    <input type="text" id="demo-fullname" name="fullname" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="demo-phone">Số điện thoại:</label>
+                                    <input type="tel" id="demo-phone" name="phone" placeholder="0123456789">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="demo-country">Quốc gia:</label>
+                                    <input type="text" id="demo-country" name="country" value="Việt Nam" disabled>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="demo-userid">User ID:</label>
+                                    <input type="text" id="demo-userid" name="userid" value="USER12345" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="demo-code">Mã code (tối đa 6 ký tự):</label>
+                                    <input type="text" id="demo-code" name="code" maxlength="6" placeholder="ABC123">
+                                </div>
+
+                                <button type="submit" class="btn-primary">Gửi</button>
+                            </form>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Giải thích các thuộc tính:</h4>
+                            <ul>
+                                <li><code>required</code>: Trường bắt buộc phải điền</li>
+                                <li><code>placeholder</code>: Hiển thị văn bản gợi ý</li>
+                                <li><code>disabled</code>: Vô hiệu hóa input (không gửi dữ liệu)</li>
+                                <li><code>readonly</code>: Chỉ đọc (vẫn gửi dữ liệu)</li>
+                                <li><code>maxlength</code>: Giới hạn số ký tự tối đa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 7: Complete Example -->
+                <section id="complete" class="section">
+                    <h2 class="section-title">7. Ví Dụ Tổng Hợp - Form Đăng Ký</h2>
+                    <div class="content">
+                        <p class="description">
+                            Kết hợp tất cả các kiến thức đã học để tạo một form đăng ký hoàn chỉnh.
+                        </p>
+
+                        <div class="example-box">
+                            <h3 class="example-title">Code Example:</h3>
+                            <pre class="code-block"><code>&lt;form action="/register" method="POST"&gt;
+    &lt;h3&gt;Form Đăng Ký Tài Khoản&lt;/h3&gt;
+    
+    &lt;label for="reg-username"&gt;Tên đăng nhập:&lt;/label&gt;
+    &lt;input type="text" id="reg-username" name="username" required&gt;
+    
+    &lt;label for="reg-email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="reg-email" name="email" required&gt;
+    
+    &lt;label for="reg-password"&gt;Mật khẩu:&lt;/label&gt;
+    &lt;input type="password" id="reg-password" name="password" required&gt;
+    
+    &lt;label for="reg-birthday"&gt;Ngày sinh:&lt;/label&gt;
+    &lt;input type="date" id="reg-birthday" name="birthday"&gt;
+    
+    &lt;p&gt;Giới tính:&lt;/p&gt;
+    &lt;input type="radio" id="reg-male" name="gender" value="male"&gt;
+    &lt;label for="reg-male"&gt;Nam&lt;/label&gt;
+    &lt;input type="radio" id="reg-female" name="gender" value="female"&gt;
+    &lt;label for="reg-female"&gt;Nữ&lt;/label&gt;
+    
+    &lt;label for="reg-country"&gt;Quốc gia:&lt;/label&gt;
+    &lt;select id="reg-country" name="country"&gt;
+        &lt;option value="vn"&gt;Việt Nam&lt;/option&gt;
+        &lt;option value="us"&gt;United States&lt;/option&gt;
+        &lt;option value="jp"&gt;Japan&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;input type="checkbox" id="reg-terms" name="terms" required&gt;
+    &lt;label for="reg-terms"&gt;Tôi đồng ý với điều khoản&lt;/label&gt;
+    
+    &lt;button type="submit"&gt;Đăng ký&lt;/button&gt;
+    &lt;button type="reset"&gt;Xóa form&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+
+                        <div class="demo-box">
+                            <h3 class="demo-title">Demo:</h3>
+                            <form class="demo-form complete-form">
+                                <h3 class="form-title">Form Đăng Ký Tài Khoản</h3>
+
+                                <div class="form-group">
+                                    <label for="reg-username">Tên đăng nhập: <span class="required">*</span></label>
+                                    <input type="text" id="reg-username" name="username" required
+                                        placeholder="Nhập tên đăng nhập">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reg-email">Email: <span class="required">*</span></label>
+                                    <input type="email" id="reg-email" name="email" required
+                                        placeholder="example@email.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reg-password">Mật khẩu: <span class="required">*</span></label>
+                                    <input type="password" id="reg-password" name="password" required
+                                        placeholder="Nhập mật khẩu">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reg-birthday">Ngày sinh:</label>
+                                    <input type="date" id="reg-birthday" name="birthday">
+                                </div>
+
+                                <div class="form-group">
+                                    <p class="form-label">Giới tính:</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="reg-gender" value="male">
+                                            <span>Nam</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="reg-gender" value="female">
+                                            <span>Nữ</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="reg-gender" value="other">
+                                            <span>Khác</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reg-country">Quốc gia:</label>
+                                    <select id="reg-country" name="country">
+                                        <option value="vn">Việt Nam</option>
+                                        <option value="us">United States</option>
+                                        <option value="jp">Japan</option>
+                                        <option value="kr">Korea</option>
+                                        <option value="cn">China</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label terms">
+                                        <input type="checkbox" name="terms" required>
+                                        <span>Tôi đồng ý với điều khoản và điều kiện <span
+                                                class="required">*</span></span>
+                                    </label>
+                                </div>
+
+                                <div class="button-group">
+                                    <button type="submit" class="btn-primary">Đăng ký</button>
+                                    <button type="reset" class="btn-secondary">Xóa form</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div><!-- End layout-container -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 HTML Forms Tutorial. Tài liệu ôn tập cho học sinh.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
